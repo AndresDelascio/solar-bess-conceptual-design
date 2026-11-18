@@ -1,0 +1,16 @@
+item,qty,unit,basis
+"PV modules, 580 W bifacial",45000,ea,1800 strings x 25
+Source circuits (strings),1800,ea,360 per block
+"Single-axis trackers, 1P, 3 strings",600,ea,"87.5 m long, 6.51 m pitch"
+Tracker piles,6000,ea,10 per tracker (assumed)
+DC combiner boxes,75,ea,24 strings max
+"Inverter / MV skids, 4.0 MVA",5,ea,1 per block
+"String wire, 10 AWG Cu PV wire",139300,m,"from layout, + and -"
+"DC feeders, 500 kcmil Al",15330,m,"from layout, + and -"
+"MV collector cable, 34.5 kV",3410,circuit-m,"radial, along roads"
+Main power transformer,1,ea,"34.5/115 kV, 33 MVA"
+"Access roads, 6 m wide",5370,m,ring + spine + block roads
+Perimeter fence,2830,m,from layout
+Fenced area,48.7,ha,120 acres
+"BESS containers, 5 MWh",9,ea,45 MWh nameplate
+"BESS power conversion (PCS), 2.5 MW",4,ea,10 MW total

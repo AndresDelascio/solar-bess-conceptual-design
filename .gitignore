@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+# Weather data: downloaded from PVGIS on first run (energy.weather), not committed
+out/tmy.csv

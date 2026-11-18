@@ -1,0 +1,54 @@
+20 MWac SOLAR + 10 MW / 40 MWh BESS - CONCEPTUAL DESIGN
+Site: Haldimand County, ON (42.95, -79.85)   Prepared by Andres Delascio
+
+PLANT
+  20.0 MWac / 26.10 MWdc, DC/AC 1.30, 5 blocks x 4.0 MVA
+
+STRING SIZING
+  25 modules/string (min 25 for MPPT), 14.50 kWdc/string
+  Voc 1486 V at -30.6 C | Vmp 913 V at 70 C | Vmp 1281 V at -30.6 C
+
+LAYOUT
+  Fence 821 x 593 m = 48.7 ha; tracker 87.5 m long, row pitch 6.51 m (GCR 0.35)
+
+DC VOLTAGE DROP (worst-case circuit, STC operating point)
+  String 0.72% over 71 m (10 AWG Cu PV wire)
+  Feeder 1.56% over 187 m (500 kcmil Al), ampacity design current 418 A (125% Isc)
+  Total  2.28%
+
+ENERGY (typical year, PVGIS TMY)
+  Note: PVGIS uses ERA5 reanalysis in North America, which reads high vs satellite data.
+        Treat as optimistic; cross-check with NSRDB or Meteonorm (PVsyst) before quoting.
+  Annual AC energy   42,782 MWh
+  Specific yield     1,639 kWh/kWp
+  Capacity factor    24.4% (AC)
+  Inverter clipping  ~1.3% of potential AC energy
+  Tracker vs fixed 30 deg: +15.2% energy
+
+QUANTITY TAKEOFF (out/takeoff.csv)
+                               item    qty      unit                      basis
+         PV modules, 580 W bifacial  45000        ea          1800 strings x 25
+          Source circuits (strings)   1800        ea              360 per block
+Single-axis trackers, 1P, 3 strings    600        ea  87.5 m long, 6.51 m pitch
+                      Tracker piles   6000        ea   10 per tracker (assumed)
+                  DC combiner boxes     75        ea             24 strings max
+       Inverter / MV skids, 4.0 MVA      5        ea                1 per block
+     String wire, 10 AWG Cu PV wire 139300         m       from layout, + and -
+           DC feeders, 500 kcmil Al  15330         m       from layout, + and -
+        MV collector cable, 34.5 kV   3410 circuit-m        radial, along roads
+             Main power transformer      1        ea        34.5/115 kV, 33 MVA
+             Access roads, 6 m wide   5370         m ring + spine + block roads
+                    Perimeter fence   2830         m                from layout
+                        Fenced area   48.7        ha                  120 acres
+             BESS containers, 5 MWh      9        ea           45 MWh nameplate
+BESS power conversion (PCS), 2.5 MW      4        ea                10 MW total
+
+QA/QC CHECKS
+  [PASS] Cold Voc string 1486 V <= 1500 V system max
+  [PASS] Hot Vmp string 913 V >= MPPT min 880 V
+  [PASS] Cold Vmp string 1281 V <= MPPT max 1325 V
+  [PASS] DC/AC ratio 1.30 within 1.20-1.40
+  [PASS] Worst-case DC voltage drop 2.28% <= 3.0%
+  [PASS] Trackers drawn in layout (600) = trackers sized (600)
+  [PASS] MPT 33 MVA >= PV + BESS export 31.6 MVA
+  [PASS] Specific yield 1639 kWh/kWp within 1100-1700 (S. Ontario sanity range)
